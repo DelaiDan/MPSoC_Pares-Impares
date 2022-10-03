@@ -106,7 +106,7 @@ int main() {
 
         for(int vez = 1; vez <= qntdVezes; vez++){
             for(int grafo = 0; grafo < tamGrafo; grafo++){
-
+                //Pega Tarefas
                 std::string vezStr = "_" + to_string(vez);
                 std::string placeholder = "+";
 
@@ -119,6 +119,8 @@ int main() {
                     placeholder = placeholder.append("_+");
                 }
 
+                //Salva em um Vector as tarefas, e no outro um Placeholder "+"
+                //Caso for tarefa repetida, salva em ambos Vectors
                 if(find(todasTarefas.begin(), todasTarefas.end(), tarefaOrigem_str) != todasTarefas.end()){
                     tarefasRepetidas.push_back(tarefaOrigem_str);
                 } else {
@@ -162,6 +164,7 @@ int main() {
                                                     cout << todasTarefas[aux] << " Repetido em: " << posX << "," << posY << endl;
                                                     aux++;
                                                     auxR++;
+                                                    break;
                                                 }
                                             }
                                         }
